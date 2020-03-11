@@ -1,0 +1,14 @@
+[
+  {
+    "Label": "UserName",
+    "Type": "text"
+  },
+  {
+    "Label": "Password",
+    "Type": "password"
+  },
+  {
+    "Label": "Login",
+    "Type": "button"
+  }
+]

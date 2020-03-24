@@ -1,14 +1,21 @@
 [
   {
     "Label": "UserName",
-    "Type": "text"
+    "Type": "text",
+    "Name": "userName"
   },
   {
     "Label": "Password",
-    "Type": "password"
+    "Type": "password",
+    "Name": "userPassword"
+  },
+  {
+    "Label": "Remember Password",
+    "Type": "checkbox",
+    "Name": "userRememberPassword"
   },
   {
     "Label": "Login",
-    "Type": "button"
+    "Type": "submit"
   }
 ]

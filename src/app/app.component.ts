@@ -14,17 +14,37 @@ import { NgForm } from '@angular/forms';
 export class AppComponent {
   title = 'Angular-form-builder';
   objectArray: any = (data as any).default;
+  objectForm: any;
 
   formBuilder = new NgFormBuilder();
   resultHtml: SafeHtml;
-  textHtml = '';  
+  textHtml = '';
   showOutput = false;
 
-  constructor(private sanitizer: DomSanitizer) {    
-    let result = this.formBuilder.getTemplateForm(this.objectArray);    
-    this.resultHtml = this.sanitizer.bypassSecurityTrustHtml(result);    
+  userName: string;
+  userPassword: string;
+
+
+  constructor(private sanitizer: DomSanitizer) {
+
+    //console.log("OBJ:", this.objectArray);
+    //for (let n = 0; n < this.objectArray.length; n++) {
+
+    //  if (this.objectArray[n] !== "submit" && this.objectArray[n] !== "button" && this.objectArray[n] !== "reset") {
+
+    //    console.log("ITEM:", this.objectArray[n])
+    //    this.objectForm[this.objectArray.Name]
+    //  }
+    //}
+    let result = this.formBuilder.getTemplateForm(this.objectArray);
+    this.resultHtml = this.sanitizer.bypassSecurityTrustHtml(result);
     this.showOutput = true;
     this.textHtml = result;
+  }
+
+  onLogin(form: NgForm) {
+    console.log("XXXX",form);
+   
   }
 
 

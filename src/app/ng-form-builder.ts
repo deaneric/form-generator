@@ -9,13 +9,13 @@ export class NgFormBuilder {
 
   controlTemplate = `
     <div class="form-group">
-    <div for="IDTAG">LABEL</div>
+    <div class="label" for="IDTAG">LABEL</div>
     <input type="TYPE" id="IDTAG" [(ngModel)]="IDTAG" class="form-control" required/>
     </div>`;
 
   textAreaTemplate = `
     <div class="form-group">
-    <div for="IDTAG">LABEL</div>
+    <div class="label" for="IDTAG">LABEL</div>
     <TYPE id="IDTAG" [(ngModel)]="IDTAG" class="form-control" rows="ROWS" cols="COLS" placeholder="PLACEHOLDER"></TYPE>
     </div>`;
 
@@ -26,7 +26,7 @@ export class NgFormBuilder {
 
   radioStartTemplate = `
     <div class="form-group">
-    <div>LABEL</div>`
+    <div class="label">LABEL</div>`
 
   radioBodyTemplate = `
     <div class="form-group">

@@ -1,18 +1,51 @@
 [
   {
-    "Label": "UserName",
+    "Label": "User Name",
     "Type": "text",
-    "Name": "userName"
+    "IdTag": "userName"
   },
   {
     "Label": "Password",
     "Type": "password",
-    "Name": "userPassword"
+    "IdTag": "userPassword"
+  },
+  {
+    "Label": "Email",
+    "Type": "email",
+    "IdTag": "userEmail"
+  },
+  {
+    "Label": "Address",
+    "Type": "textarea",
+    "IdTag": "userAddress",
+    "rows": "4",
+    "cols": "30",
+    "placeholder": "Write address here..."
+  },
+  {
+    "Label": "Select Account",
+    "Type": "select",
+    "IdTag": "userAccountType"
+  },
+  {
+    "Label": "Account Type",
+    "Type": "radio",
+    "IdTag": "userAccountRadio",
+    "SubType": [
+      {
+        "SubLabel": "Account-One",
+        "SubName": "accountOne"
+      },
+      {
+        "SubLabel": "Account-Two",
+        "SubName": "accountTwo"
+      }
+    ]
   },
   {
     "Label": "Remember Password",
     "Type": "checkbox",
-    "Name": "userRememberPassword"
+    "IdTag": "userRememberPassword"
   },
   {
     "Label": "Login",

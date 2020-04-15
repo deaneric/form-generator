@@ -26,16 +26,6 @@ export class AppComponent {
 
 
   constructor(private sanitizer: DomSanitizer) {
-
-    //console.log("OBJ:", this.objectArray);
-    //for (let n = 0; n < this.objectArray.length; n++) {
-
-    //  if (this.objectArray[n] !== "submit" && this.objectArray[n] !== "button" && this.objectArray[n] !== "reset") {
-
-    //    console.log("ITEM:", this.objectArray[n])
-    //    this.objectForm[this.objectArray.Name]
-    //  }
-    //}
     let result = this.formBuilder.getTemplateForm(this.objectArray);
     this.resultHtml = this.sanitizer.bypassSecurityTrustHtml(result);
     this.showOutput = true;
@@ -43,8 +33,23 @@ export class AppComponent {
   }
 
   onLogin(form: NgForm) {
-    console.log("XXXX",form);
-   
+    console.log("XXXX", form);
+
+  }
+
+  copyText(data) {
+    let selBox = document.createElement('textarea');
+    selBox.style.position = 'fixed';
+    selBox.style.left = '0';
+    selBox.style.top = '0';
+    selBox.style.opacity = '0';
+    selBox.value = data;
+    document.body.appendChild(selBox);
+    selBox.focus();
+    selBox.select();
+    document.execCommand('copy');
+    document.body.removeChild(selBox);
+    alert("Code is copied to clipboard.")
   }
 
 

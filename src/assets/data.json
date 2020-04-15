@@ -2,22 +2,22 @@
   {
     "Label": "User Name",
     "Type": "text",
-    "IdTag": "userName"
+    "ID": "userName"
   },
   {
     "Label": "Password",
     "Type": "password",
-    "IdTag": "userPassword"
+    "ID": "userPassword"
   },
   {
     "Label": "Email",
     "Type": "email",
-    "IdTag": "userEmail"
+    "ID": "userEmail"
   },
   {
     "Label": "Address",
     "Type": "textarea",
-    "IdTag": "userAddress",
+    "ID": "userAddress",
     "rows": "4",
     "cols": "30",
     "placeholder": "Write address here..."
@@ -25,12 +25,12 @@
   {
     "Label": "Select Account",
     "Type": "select",
-    "IdTag": "userAccountType"
+    "ID": "userAccountType"
   },
   {
     "Label": "Account Type",
     "Type": "radio",
-    "IdTag": "userAccountRadio",
+    "ID": "userAccountRadio",
     "SubType": [
       {
         "SubLabel": "Account-One",
@@ -45,7 +45,7 @@
   {
     "Label": "Remember Password",
     "Type": "checkbox",
-    "IdTag": "userRememberPassword"
+    "ID": "userRememberPassword"
   },
   {
     "Label": "Login",

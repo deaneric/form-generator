@@ -10,9 +10,9 @@
       <div [innerHTML]="resultHtml"></div>
     </div>
     <div>
-      <h3>Template Form HTML</h3>
+      <h3 class="display-inline">Template Form HTML</h3><button class="copy-btn" (click)="copyText(textHtml)">Copy text</button>
       <pre>
-      {{textHtml}}
+        <span id="outPutResult">{{textHtml}}</span>
       </pre>
     </div>
   </div>

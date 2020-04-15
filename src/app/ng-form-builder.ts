@@ -9,19 +9,19 @@ export class NgFormBuilder {
 
   controlTemplate = `
     <div class="form-group">
-    <div class="label" for="IDTAG">LABEL</div>
-    <input type="TYPE" id="IDTAG" [(ngModel)]="IDTAG" class="form-control" required/>
+    <div class="label" for="ID">LABEL</div>
+    <input type="TYPE" id="ID" [(ngModel)]="ID" class="form-control" required/>
     </div>`;
 
   textAreaTemplate = `
     <div class="form-group">
-    <div class="label" for="IDTAG">LABEL</div>
-    <TYPE id="IDTAG" [(ngModel)]="IDTAG" class="form-control" rows="ROWS" cols="COLS" placeholder="PLACEHOLDER"></TYPE>
+    <div class="label" for="ID">LABEL</div>
+    <TYPE id="ID" [(ngModel)]="ID" class="form-control" rows="ROWS" cols="COLS" placeholder="PLACEHOLDER"></TYPE>
     </div>`;
 
   checboxTemplate = `
     <div class="form-group">
-    <input type="TYPE" id="IDTAG" name="IDTAG" /><span for="IDTAG">LABEL</span>
+    <input type="TYPE" id="ID" name="ID" /><span for="ID">LABEL</span>
     </div>`;
 
   radioStartTemplate = `
@@ -30,15 +30,15 @@ export class NgFormBuilder {
 
   radioBodyTemplate = `
     <div class="form-group">
-    <input type="TYPE" id="SUBID" name="IDTAG" value="SUBID"/><span for="SUBID">LABEL</span>
+    <input type="TYPE" id="SUBID" name="ID" value="SUBID"/><span for="SUBID">LABEL</span>
     </div>`;
 
   radioEndTemplate = `</div>`;
 
   selectDropdownTemplate = `
     <div class="form-group">
-    <div for="IDTAG">LABEL</div>
-    <select class="form-control" id="IDTAG" required>
+    <div for="ID">LABEL</div>
+    <select class="form-control" id="ID" required>
       <option value="Select Value">Select Value</option>
     </select>
     </div>`;
@@ -57,11 +57,11 @@ export class NgFormBuilder {
     for (let i = 0; i < jsonData.length; i++) {
       let type = jsonData[i].Type;
       let label = jsonData[i].Label;
-      let IdTag = jsonData[i].IdTag;
+      let Id = jsonData[i].Id;
 
       if (type === "password" || type === "text" || type === "email") {
         let template = this.controlTemplate.replace("TYPE", type);
-        template = template.replace(/IDTAG/g, IdTag);
+        template = template.replace(/ID/g, Id);
         template = template.replace("LABEL", label);
         this.newForm += template;
       }
@@ -70,7 +70,7 @@ export class NgFormBuilder {
         let cols = jsonData[i].cols;
         let placeholder = jsonData[i].placeholder;
         let template = this.textAreaTemplate.replace(/TYPE/g, type);
-        template = template.replace(/IDTAG/g, IdTag);
+        template = template.replace(/ID/g, Id);
         template = template.replace("LABEL", label);
         template = template.replace("ROWS", rows);
         template = template.replace("COLS", cols);
@@ -84,20 +84,18 @@ export class NgFormBuilder {
       }
       else if (type === "checkbox") {
         let template = this.checboxTemplate.replace("TYPE", type);
-        template = template.replace(/IDTAG/g, IdTag);
+        template = template.replace(/ID/g, Id);
         template = template.replace("LABEL", label);
         this.newForm += template;
       }
       else if (type === "radio") {
-        let template = this.radioStartTemplate.replace("LABEL", label);
-        console.log("TEMP:", template);
-        this.newForm += template;
-        console.log("NF:", this.newForm);
+        let template = this.radioStartTemplate.replace("LABEL", label);        
+        this.newForm += template;        
         for (let j = 0; j < jsonData[i].SubType.length; j++) {
           let subId = jsonData[i].SubType[j].SubName;
           let subLabel = jsonData[i].SubType[j].SubLabel;
           template = this.radioBodyTemplate.replace("TYPE", type);
-          template = template.replace(/IDTAG/g, IdTag);
+          template = template.replace(/ID/g, Id);
           template = template.replace(/SUBID/g, subId);
           template = template.replace("LABEL", subLabel);
           this.newForm += template;
@@ -107,7 +105,7 @@ export class NgFormBuilder {
       }
       else if (type === "select") {
         let template = this.selectDropdownTemplate.replace("TYPE", type);
-        template = template.replace(/IDTAG/g, IdTag);
+        template = template.replace(/ID/g, Id);
         template = template.replace("LABEL", label);
         this.newForm += template;
       }
